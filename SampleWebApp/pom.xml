@@ -39,8 +39,8 @@
         <artifactId>sonar-maven-plugin</artifactId>
         <version>4.0.0.4121</version> <!-- Latest stable version of SonarQube plugin -->
         <configuration>
-          <!-- Optional: Pass additional Java options for reflective access (if needed for Java 16+) -->
-          <javaOpts>--add-opens java.base/java.lang=ALL-UNNAMED</javaOpts>
+          <!-- Add JVM options for reflective access (for Java 16+) -->
+          <argLine>--add-opens java.base/java.lang=ALL-UNNAMED</argLine>
         </configuration>
       </plugin>
       
