@@ -39,7 +39,7 @@
         <artifactId>sonar-maven-plugin</artifactId>
         <version>4.0.0.4121</version>
         <configuration>
-          <!-- This is where you would configure the SonarQube properties, but NOT argLine -->
+          <!-- SonarQube plugin configuration (no need for argLine here) -->
         </configuration>
       </plugin>
 
@@ -49,7 +49,7 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <version>2.22.2</version>
         <configuration>
-          <!-- Set JVM options to resolve reflection issue in Java 16+ -->
+          <!-- Set JVM options for Surefire to resolve reflection issue in Java 16+ -->
           <argLine>--add-opens java.base/java.lang=ALL-UNNAMED</argLine>
         </configuration>
       </plugin>
