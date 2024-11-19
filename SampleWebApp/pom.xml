@@ -1,6 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
   <modelVersion>4.0.0</modelVersion>
+  
   <groupId>com.sample.webproject</groupId>
   <artifactId>SampleWebApp-1.0.0</artifactId>
   <packaging>war</packaging>
@@ -19,12 +22,29 @@
   
   <build>
     <finalName>SampleWebApp</finalName>
+    
+    <!-- Define the Maven plugins -->
     <plugins>
+    
+      <!-- Maven WAR Plugin -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
-        <version>3.3.1</version> <!-- Update to a stable version -->
+        <version>3.3.1</version> <!-- Ensure this version is compatible with your setup -->
       </plugin>
-</plugins>
+      
+      <!-- SonarQube Plugin for code analysis -->
+      <plugin>
+        <groupId>org.sonarsource.scanner.maven</groupId>
+        <artifactId>sonar-maven-plugin</artifactId>
+        <version>4.0.0.4121</version> <!-- Latest stable version of SonarQube plugin -->
+        <configuration>
+          <!-- Optional: Pass additional Java options for reflective access (if needed for Java 16+) -->
+          <javaOpts>--add-opens java.base/java.lang=ALL-UNNAMED</javaOpts>
+        </configuration>
+      </plugin>
+      
+    </plugins>
   </build>
+  
 </project>
