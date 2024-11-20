@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?> 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
@@ -20,6 +20,12 @@
     </dependency>
   </dependencies>
 
+  <!-- Define properties for SonarQube -->
+  <properties>
+    <!-- JVM options for SonarQube analysis -->
+    <sonar.java.options>--add-opens=java.base/java.lang=ALL-UNNAMED</sonar.java.options>
+  </properties>
+
   <build>
     <finalName>SampleWebApp</finalName>
 
@@ -39,7 +45,7 @@
         <artifactId>sonar-maven-plugin</artifactId>
         <version>4.0.0.4121</version>
         <configuration>
-          <!-- SonarQube plugin configuration (no need for argLine here) -->
+          <!-- SonarQube plugin configuration (already handled in properties) -->
         </configuration>
       </plugin>
 
